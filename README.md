@@ -10,6 +10,6 @@
     
 2021-11-10-Wed  
  - Programmers_체육복  
-   Update 필요  
+  Complete  
 - Programmers_조이스틱  
   Complete
