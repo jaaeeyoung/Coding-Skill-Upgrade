@@ -100,6 +100,6 @@ print(solution(3, [3], [1])) # 2
 print(solution(5, [2, 4], [1, 2])) # 4
 print(solution(5, [1, 2, 3], [2, 3, 4])) # 4
 print(solution(5, [2, 3, 4], [1, 2, 3])) # 4
-#print(solution(3, [], [])) # 3
-#print(solution(3, [1, 2, 3], [])) # 0
-#print(solution(3, [], [1, 2, 3])) # 3
+print(solution(3, [], [])) # 3
+print(solution(3, [1, 2, 3], [])) # 0
+print(solution(3, [], [1, 2, 3])) # 3
