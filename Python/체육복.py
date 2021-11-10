@@ -45,7 +45,11 @@ Log
 2021-11-10-Wed : 문제 파악
                  채점 테스트 3 ~ 5, 7 ~ 9, 11 실패
                  체육복 빌려주기에서 answer의 증가 연산을 각 if문 안으로 넣음
-                 -> 채점 테스트 11, 13 ~ 16 실패
+                 -> 채점 테스트 11, 13 ~ 16 실패 (75점)
+                 체육복 빌려주기를 앞 사람에게 빌려주는 경우와 뒷 사람에게 빌려주는 경우를 각각 다른 for문 이용
+                 -> 채점 테스트 17 ~ 20 실패 (80점)
+                 두 개로 나눴던 for문을 하나로 합치고 i의 범위 재설정
+                 -> 문제 해결
 ===================================================================================================================================
 '''
 
@@ -72,25 +76,21 @@ def solution(n, lost, reserve):
 
     # 체육복 빌려주기
     for i in range(n-1):
-        # 현재 index의 학생이 체육복을 빌려줄 수 있고
-        if check[i] == True:
-            # 다음 index의 학생은 체육복이 없는 경우
-            if result[i+1] == False:
-                # 빌려줬기 때문에 현재 index의 학생은 이제 체육복을 빌려줄 수 없음
-                check[i] = False
-                # 빌린 학생은 이제 체육 수업을 들을 수 있음
-                result[i+1] = True
-                answer += 1
-                
-            # 이전 index의 학생은 체육복이 없는 경우
-            elif result[i-1] == False:
-                # 현재 index의 학생이 첫 번째 학생이라면 통과
-                if i > 0:
-                    # 빌려줬기 때문에 현재 index의 학생은 이제 체육복을 빌려줄 수 없음
-                    check[i] = False
-                    # 빌린 학생은 이제 체육 수업을 들을 수 있음
-                    result[i-1] = True
-                    answer += 1
+        # 현재 index의 학생이 체육복을 빌려줄 수 있고 이전 index의 학생은 체육복이 없는 경우 (현재 index의 학생이 첫 번째 학생이라면 통과)
+        if check[i+1] == True and result[i] == False:
+            # 빌려줬기 때문에 현재 index의 학생은 이제 체육복을 빌려줄 수 없음
+            check[i+1] = False
+            # 빌린 학생은 이제 체육 수업을 들을 수 있음
+            result[i] = True
+            answer += 1
+        
+        # 현재 index의 학생이 체육복을 빌려줄 수 있고 다음 index의 학생은 체육복이 없는 경우
+        elif check[i] == True and result[i+1] == False:
+            # 빌려줬기 때문에 현재 index의 학생은 이제 체육복을 빌려줄 수 없음
+            check[i] = False
+            # 빌린 학생은 이제 체육 수업을 들을 수 있음
+            result[i+1] = True
+            answer += 1        
     
     return answer
 
@@ -103,3 +103,9 @@ print(solution(5, [2, 3, 4], [1, 2, 3])) # 4
 print(solution(3, [], [])) # 3
 print(solution(3, [1, 2, 3], [])) # 0
 print(solution(3, [], [1, 2, 3])) # 3
+print(solution(3, [1], [3])) # 2
+print(solution(3, [1, 2], [2, 3])) # 2
+print(solution(10, [5, 4, 3, 2, 1], [3, 1, 2, 5, 4])) # 10
+print(solution(4, [3, 1], [2, 4])) # 4
+print(solution(5, [3, 5], [2, 4])) # 5
+print(solution(5, [2, 4], [3, 5])) # 5
