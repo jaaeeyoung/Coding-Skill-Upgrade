@@ -104,16 +104,9 @@ def solution(name):
             location = index_[0]
         # location이 index의 첫 원소와 마지막 원소 사이에 있는 경우
         else:
-            # location이 index의 첫 원소와 더 가까운 경우
-            if location - index_[0] < location - index_[-1]:
-                answer += location - index_[0]
-                index_ = index_[1:]
-                location = index_[0]
-            # location이 index의 마지막 원소와 더 가까운 경우
-            else:
-                answer += len(name) - index_[-1] + location
-                index_ = index_[:index_.index(location)] + index_[index_.index(location) + 1:]
-                location = index_[-1]
+            answer += len(name) - index_[-1] + location
+            index_ = index_[:index_.index(location)] + index_[index_.index(location) + 1:]
+            location = index_[-1]
             
     return answer
 
