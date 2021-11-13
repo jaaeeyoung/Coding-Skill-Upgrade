@@ -15,5 +15,5 @@
   Complete
 
 2021-11-13-Sat  
- - Programmers_짝지어 제거하기.py
+ - Programmers_짝지어 제거하기
   Update 필요
