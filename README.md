@@ -11,5 +11,9 @@
 2021-11-10-Wed  
  - Programmers_체육복  
   Complete  
-- Programmers_조이스틱  
+ - Programmers_조이스틱  
   Complete
+
+2021-11-13-Sat  
+ - Programmers_짝지어 제거하기.py
+  Update 필요
