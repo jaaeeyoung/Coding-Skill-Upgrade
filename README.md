@@ -17,3 +17,7 @@
 2021-11-13-Sat  
  - Programmers_짝지어 제거하기  
   Update 필요
+
+2021-11-14-Sun  
+ - Programmers_뉴스 클러스터링
+  Update 필요
