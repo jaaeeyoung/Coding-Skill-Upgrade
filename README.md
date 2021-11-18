@@ -32,3 +32,4 @@
   - Programmers_모의고사_Python  
     Complete  
   - Programmers_소수 찾기_Python  
+    Complete  
