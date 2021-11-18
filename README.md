@@ -24,4 +24,11 @@
 
 2021-11-16-Tue  
   - Programmers_없는 숫자 더하기_C  
-    Complete
+    Complete  
+
+2021-11-18-Thu
+  - Programmers_카펫_Python  
+    Complete  
+  - Programmers_모의고사_Python  
+    Complete  
+  - Programmers_소수 찾기_Python  
