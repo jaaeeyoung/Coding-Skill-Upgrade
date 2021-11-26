@@ -33,3 +33,17 @@
     Complete  
   - Programmers_소수 찾기_Python  
     Complete  
+
+2021-11-22-Mon  
+   - Programmers_기능개발_Python  
+      Complete  
+   - Porgrammers_프린터_Python  
+      Complete  
+
+2021-11-23-Tue  
+   - Programmers_다리를 지나는 트럭_Python  
+      Update 필요  
+
+2021-11-24-Wed  
+   - Programmers_다리를 지나는 트럭_Python  
+      Update 필요  
