@@ -88,8 +88,8 @@ def solution(str1, str2):
         s1.append(str1[i] + str1[i+1])
     for i in range(len(str2)-1):
         s2.append(str2[i] + str2[i+1])
-    # print(s1)
-    # print(s2)
+    print(s1)
+    print(s2)
     
     # 특수문자 제거하기
     i = 0
@@ -97,31 +97,31 @@ def solution(str1, str2):
     while True:
         # A : 65, Z : 91
         # AA1+AA2
-        # print('i :', i)
+        print('i :', i)
         temp = [s1[i][0], s1[i][1]]
-        # print('temp :', temp)
+        print('temp :', temp)
         if ord(temp[0]) < 65 or ord(temp[0]) > 91 or ord(temp[1]) < 65 or ord(temp[1]) > 91:
             s1 = s1[:i] + s1[i + 1:]
             i -= 1
         if i == len(s1)-1:
             break
         i += 1
-    #s1 = list(set(s1))
-    # print('\n')
+    s1 = list(set(s1))
+    print('\n')
     i = 0
     while True:
         # A : 65, Z : 91
-        # print('i :', i)
+        print('i :', i)
         temp = [s2[i][0], s2[i][1]]
-        # print('temp :', temp)
+        print('temp :', temp)
         if ord(temp[0]) < 65 or ord(temp[0]) > 91 or ord(temp[1]) < 65 or ord(temp[1]) > 91:
             s2 = s2[:i] + s2[i + 1:]
             i -= 1
         if i == len(s2) - 1:
             break
         i += 1
-    #s2 = list(set(s2))
-    # print(s1, s2)
+    s2 = list(set(s2))
+    print(s1, s2)
     
     # 교집합, 합집합 개수 찾기
     count1 = 0 # 교집합
@@ -138,16 +138,15 @@ def solution(str1, str2):
     
     if len(s2) > 0 and count2 == 0:
         count2 = max(len(s1), len(s2))
-        # print(count2)
+        print(count2)
     else:
         count2 += count1
-    # print(count1, count2)
+    print(count1, count2)
     
     # 교집합 / 합집합 * 65536 -> 정수부분만 출력
     if count1 == 0 and count2 == 0:
         answer = 65536
     else:
-        # print('hi')
         answer = math.trunc((count1 / count2) * 65536)
     return answer
 
